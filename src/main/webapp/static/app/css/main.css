@@ -1,0 +1,64 @@
+table {
+    text-align: center;
+}
+
+table,
+table tr,
+table td,
+table th{
+    border:1px solid #ccc;
+}
+#betTable th{
+    width:20%;
+}
+
+#betDetailTable th{
+    width: 30%;
+}
+
+#betSlipTable th {
+    width: 13%;
+}
+.warning{
+    color:#fff;
+    background-color: #fecd5b;
+    display: inline-block;
+}
+
+.filter{
+    color:#00F;
+    cursor: pointer;
+}
+.filter-btn{
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#mainContainer{
+    position: relative;
+    z-index: 1;
+}
+#logo{
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 60px;
+    height: 64px;
+    background-image: url("/static/img/logo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+label{
+    width: 100px;
+    display: inline-block;
+}

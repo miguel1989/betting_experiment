@@ -1,0 +1,10 @@
+<tr>
+    <td><%=model.timestamp%></td>
+    <td><%=model.betId%></td>
+    <td><%=model.name%> <span class="filter filterByBetId" id="<%=model.betId%>">[filter]</span></td>
+    <td><%=model.type%> <span class="filter filterByType" id="<%=model.type%>">[filter]</span></td>
+    <td><%=model.odd%></td>
+    <td><%=model.amount.value%> <%=model.amount.currency%></td>
+    <td><%=model.ip%> <span class="filter filterByIp" id="<%=model.ip%>">[filter]</span></td>
+    <td><button id="<%=model.timestamp%>" class="deleteByTs">delete by ts</button></td>
+</tr>

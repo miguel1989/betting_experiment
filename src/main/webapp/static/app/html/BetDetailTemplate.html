@@ -1,0 +1,26 @@
+<div><a href="#bets">[Back to list]</a></div>
+<div>Betting slip</div>
+<table id="betDetailTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Betting type</th>
+            <th>Odds</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%=name%></td>
+            <td><%=placeBetModel.type%></td>
+            <td><%=placeBetModel.odd%></td>
+        </tr>
+    </tbody>
+</table>
+
+<div>How much you want to bet?</div>
+<div class="warning">Min amount is <%=minBetAmount%> and max amount is <%=maxBetAmount%></div>
+<div>
+    <span><input id="amount" type="number" value="<%=betAmountValue%>"/></span>
+    <span><%=placeBetModel.amount.currency%></span>
+</div>
+<button id="placeBet">Place a bet</button>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf-8</charset>
+            <Pattern>[%d]&lt;%-5p&gt;[%c{1}] %m [%t] %n</Pattern>
+        </encoder>
+    </appender>
+
+
+    <appender name="MAIN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/main.log</File>
+        <encoder>
+            <pattern>[%d]&lt;%-5p&gt;[%c{1}] %m [%t] %n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>30</maxIndex>
+            <FileNamePattern>logs/main.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5000KB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <appender name="WORKER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/workers.log</File>
+        <encoder>
+            <pattern>[%d]&lt;%-5p&gt;[%c{1}] %m [%t] %n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>5</maxIndex>
+            <FileNamePattern>logs/worker.log.%i</FileNamePattern>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>5000KB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <logger name="com.neotech.controller" level="DEBUG">
+        <appender-ref ref="MAIN" />
+    </logger>
+
+    <logger name="com.neotech.service.impl" level="DEBUG">
+        <appender-ref ref="MAIN" />
+    </logger>
+
+    <logger name="com.neotech.worker" level="DEBUG">
+        <appender-ref ref="MAIN" />
+        <appender-ref ref="WORKER" />
+    </logger>
+
+    <logger name="org.springframework.web" level="INFO">
+        <appender-ref ref="MAIN" />
+    </logger>
+
+</configuration>
